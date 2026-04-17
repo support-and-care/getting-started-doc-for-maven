@@ -1,8 +1,8 @@
 [project]
-site_name = "Maven Documentation"
-site_description = "Official Maven product documentation."
+site_name = "Documentation for Apache Maven"
+site_description = "Documentation site for Apache Maven."
 site_author = "Maven Team"
-copyright = "Copyright © 2026 Maven"
+copyright = "Apache, Apache Maven™, and the Apache Maven™ logo are either registered trademarks or trademarks of the Apache Software Foundation."
 repo_name = "apache/maven"
 repo_url = "https://github.com/apache/maven"
 extra_css = ["assets/stylesheets/extra.css"]
