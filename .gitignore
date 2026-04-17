@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+
+# Zensical build output
+site/
+
+# Zensical cache
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Environment and secrets
+.env
+.env.*
