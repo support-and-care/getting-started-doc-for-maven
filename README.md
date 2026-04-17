@@ -20,7 +20,7 @@ source .venv/bin/activate
 zensical serve
 ```
 
-Open the URL Zensical prints (usually `http://127.0.0.1:8000`).
+Open the URL Zensical prints (usually `http://localhost:8000/`).
 
 ## GitHub Pages
 
