@@ -17,24 +17,10 @@ pip install zensical
 
 ```sh
 source .venv/bin/activate
-zensical serve -f zensical.toml
+zensical serve
 ```
 
 Open the URL Zensical prints (usually `http://127.0.0.1:8000`).
-
-## Build
-
-```sh
-source .venv/bin/activate
-zensical build --clean -f zensical.toml
-```
-
-Output is written to `site/`.
-
-## Project layout
-
-- `zensical.toml` — site name, nav, theme, repo link.
-- `docs/` — Markdown sources.
 
 ## GitHub Pages
 
