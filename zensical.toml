@@ -11,21 +11,15 @@ nav = [
   { "Home" = "index.md" },
   { "Getting Started" = [
       { "Getting Started" = "get-started/index.md" },
-      { "Install Maven" = "get-started/install-maven.md" },
-      { "Quick Start" = "get-started/quick-start.md" },
-      { "Build Lifecycle" = "get-started/build-lifecycle.md" },
-      { "Migrate to Maven 4" = "get-started/migrate-maven-4.md" },
-      { "Compatibility" = "get-started/compatibility.md" },
-      { "License" = "get-started/license.md" }
+      { "What is Maven for?" = "get-started/what-is-maven.md" },
+      { "Download and Install Maven" = "get-started/install-maven.md" },
+      { "Basic Project Sample" = "get-started/basic-project-sample.md" },
+  ]},
+  { "Learning Paths" = [
+      { "Overview" = "learning-paths/index.md" }
   ]},
   { "User Guide" = [
       { "Overview" = "usage/index.md" }
-  ]},
-  { "Configuration" = [
-      { "Overview" = "setup/index.md" }
-  ]},
-  { "Plugins" = [
-      { "Overview" = "authoring/index.md" }
   ]},
   { "Community" = [
       { "Overview" = "community/index.md" }
@@ -83,4 +77,3 @@ alternate_style = true
 combine_header_slug = true
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
-
