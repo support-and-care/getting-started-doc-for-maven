@@ -13,6 +13,12 @@ source .venv/bin/activate
 pip install zensical
 ```
 
+You can deactivate the virtualenv with:
+
+```sh
+deactivate
+```
+
 ## Run locally
 
 ```sh
