@@ -1,0 +1,8 @@
+repos:
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.48.0
+    hooks:
+      - id: markdownlint
+        args: [--config=.markdownlint.json, --rules=markdownlint-sentences-per-line ]
+        additional_dependencies:
+          - npm:markdownlint-sentences-per-line
