@@ -12,7 +12,7 @@ nav = [
   { "Getting Started" = [
       { "Getting Started" = "get-started/index.md" },
       { "What is Maven for?" = "get-started/what-is-maven.md" },
-      { "Download and Install Maven" = "get-started/install-maven.md" },
+      { "Installing Apache Maven" = "get-started/install-maven.md" },
       { "Basic Project Sample" = "get-started/basic-project-sample.md" },
   ]},
   { "Learning Paths" = [
