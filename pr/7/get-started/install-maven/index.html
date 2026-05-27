@@ -29,7 +29,7 @@
     
     
       
-        <title>Download and Install Apache Maven - Documentation for Apache Maven</title>
+        <title>Installing Apache Maven - Documentation for Apache Maven</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#download-and-install-apache-maven" class="md-skip">
+        <a href="#installing-apache-maven" class="md-skip">
           Skip to content
         </a>
       
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Download and Install Apache Maven
+              Installing Apache Maven
             
           </span>
         </div>
@@ -530,7 +530,7 @@
   <span class="md-ellipsis">
     
   
-  Download and Install Maven
+  Installing Apache Maven
 
     
   </span>
@@ -547,7 +547,7 @@
   <span class="md-ellipsis">
     
   
-  Download and Install Maven
+  Installing Apache Maven
 
     
   </span>
@@ -585,10 +585,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-your-jdk" class="md-nav__link">
+  <a href="#verify-your-jdk-installation" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Check your JDK
+        Verify your JDK installation
       </span>
     </span>
   </a>
@@ -596,10 +596,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#set-java_home-recommended" class="md-nav__link">
+  <a href="#configure-java_home" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Set <code>JAVA_HOME</code> (recommended)
+        Configure <code>JAVA_HOME</code>
       </span>
     </span>
   </a>
@@ -669,10 +669,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-add-maven-to-your-path" class="md-nav__link">
+  <a href="#3-add-maven-to-the-path" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        3. Add Maven to your <code>PATH</code>
+        3. Add Maven to the <code>PATH</code>
       </span>
     </span>
   </a>
@@ -1019,10 +1019,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-your-jdk" class="md-nav__link">
+  <a href="#verify-your-jdk-installation" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Check your JDK
+        Verify your JDK installation
       </span>
     </span>
   </a>
@@ -1030,10 +1030,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#set-java_home-recommended" class="md-nav__link">
+  <a href="#configure-java_home" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Set <code>JAVA_HOME</code> (recommended)
+        Configure <code>JAVA_HOME</code>
       </span>
     </span>
   </a>
@@ -1103,10 +1103,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-add-maven-to-your-path" class="md-nav__link">
+  <a href="#3-add-maven-to-the-path" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        3. Add Maven to your <code>PATH</code>
+        3. Add Maven to the <code>PATH</code>
       </span>
     </span>
   </a>
@@ -1239,117 +1239,103 @@
   
 
 
-<h1 id="download-and-install-apache-maven">Download and Install Apache Maven<a class="headerlink" href="#download-and-install-apache-maven" title="Permanent link">&para;</a></h1>
-<p>Maven is a command-line tool. Installing it means putting the <code>mvn</code>
-command on your <code>PATH</code> so you can run it from any terminal.</p>
-<p>This page walks you through:</p>
+<h1 id="installing-apache-maven">Installing Apache Maven<a class="headerlink" href="#installing-apache-maven" title="Permanent link">&para;</a></h1>
+<p>Apache Maven is a command-line build tool, so installing it means making the <code>mvn</code> command available from a terminal.</p>
+<p>This guide covers three steps:</p>
 <ol>
-<li>checking that you have a working Java installation,</li>
-<li>installing Maven (using a package manager or the official archive),</li>
-<li>verifying that everything works.</li>
+<li>installing and configuring a Java Development Kit (JDK);</li>
+<li>downloading and installing Maven;</li>
+<li>verifying the Maven installation.</li>
 </ol>
-<p>If you are in a hurry and already know your way around your operating
-system, jump straight to the <a href="#install-with-a-package-manager">package-manager</a>
-or <a href="#install-from-the-binary-archive">manual install</a> section.</p>
 <h2 id="prerequisites-a-working-jdk">Prerequisites: a working JDK<a class="headerlink" href="#prerequisites-a-working-jdk" title="Permanent link">&para;</a></h2>
-<p>Maven is itself a Java application, so you need a <strong>Java Development
-Kit (JDK)</strong> installed before you install Maven.</p>
+<p>Maven runs on the Java platform and requires a <strong>Java Development Kit (JDK)</strong> to execute.
+A JDK (not a JRE) is required, because Maven invokes compiler tools such as <code>javac</code> during a build.</p>
+<p>The minimum required JDK version depends on the Maven version in use:</p>
 <table>
 <thead>
 <tr>
 <th>Maven version</th>
-<th>Required JDK to run Maven</th>
+<th>Minimum JDK</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Maven 3.9.x (current stable)</td>
-<td>JDK 8 or later</td>
+<td>Maven 3.x</td>
+<td>JDK 8</td>
 </tr>
 <tr>
-<td>Maven 4.x (preview)</td>
-<td>JDK 17 or later</td>
+<td>Maven 4.x</td>
+<td>JDK 17</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition tip">
-<p class="admonition-title">JDK vs. JRE</p>
-<p>You need a JDK, not just a JRE. The JDK includes the tools (such as
-<code>javac</code>) that Maven uses to compile your projects.</p>
-</div>
-<p>You can use any modern JDK distribution, for example
-<a href="https://adoptium.net/">Eclipse Temurin</a>,
-<a href="https://aws.amazon.com/corretto/">Amazon Corretto</a>,
-<a href="https://www.azul.com/downloads/">Azul Zulu</a>,
-<a href="https://learn.microsoft.com/en-us/java/openjdk/">Microsoft Build of OpenJDK</a>,
-or the <a href="https://www.oracle.com/java/technologies/downloads/">Oracle JDK</a>.</p>
-<h3 id="check-your-jdk">Check your JDK<a class="headerlink" href="#check-your-jdk" title="Permanent link">&para;</a></h3>
+<p>Any modern JDK distribution is suitable.</p>
+<h3 id="verify-your-jdk-installation">Verify your JDK installation<a class="headerlink" href="#verify-your-jdk-installation" title="Permanent link">&para;</a></h3>
+<p>Before installing Maven, confirm that a compatible JDK is available on the system.</p>
 <p>Open a new terminal and run:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>java<span class="w"> </span>-version
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>javac<span class="w"> </span>-version
 </span></code></pre></div>
-<p>You should see something similar to:</p>
+<p>The output should be similar to:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>openjdk version &quot;21.0.4&quot; 2024-07-16 LTS
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>javac 21.0.4
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>OpenJDK Runtime Environment (build 21.0.4+7-LTS)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>OpenJDK 64-Bit Server VM (build 21.0.4+7-LTS, mixed mode, sharing)
 </span></code></pre></div>
-<p>If either command is <em>not</em> found, install a JDK first and then come back.</p>
-<h3 id="set-java_home-recommended">Set <code>JAVA_HOME</code> (recommended)<a class="headerlink" href="#set-java_home-recommended" title="Permanent link">&para;</a></h3>
-<p>Maven looks for Java by checking the <code>JAVA_HOME</code> environment variable
-first, then falling back to the <code>java</code> executable on your <code>PATH</code>.
-Setting <code>JAVA_HOME</code> explicitly makes your setup predictable and easier
-to debug.</p>
+<p>If the command is not found, install a JDK and verify the installation again.</p>
+<h3 id="configure-java_home">Configure <code>JAVA_HOME</code><a class="headerlink" href="#configure-java_home" title="Permanent link">&para;</a></h3>
+<p>Maven uses the <code>JAVA_HOME</code> environment variable to locate the JDK at runtime.
+Maven may fail to start when <code>JAVA_HOME</code> is missing or points to an invalid directory, even when the <code>java</code> executable is on the <code>PATH</code>.
+Configure <code>JAVA_HOME</code> so that it is available in every shell session that runs Maven.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS / Linux (bash, zsh)</label><label for="__tabbed_1_2">Windows (PowerShell)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Add the following to your shell profile (<code>~/.zshrc</code>, <code>~/.bashrc</code>,
-<code>~/.profile</code>, depending on your shell), replacing the path with
-your actual JDK location:</p>
+<p>Add the following lines to the shell profile (<code>~/.zshrc</code>, <code>~/.bashrc</code>, or <code>~/.profile</code>), and replace the path with the actual JDK location:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/path/to/your/jdk
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$JAVA_HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </span></code></pre></div>
-<p>On macOS, you can let the system locate your JDK:</p>
+<p>On macOS, the helper <code>/usr/libexec/java_home</code> returns the currently installed JDK location:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="k">)</span>
 </span></code></pre></div>
-<p>Reload the shell (<code>source ~/.zshrc</code>) or open a new terminal.</p>
+<p>Reload the shell (<code>source ~/.zshrc</code>) or open a new terminal so the change takes effect.</p>
 </div>
 <div class="tabbed-block">
-<p>Set the variable for your user account:</p>
+<p>Set the variable for the current user account:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;JAVA_HOME&quot;</span><span class="p">,</span> <span class="s2">&quot;C:\Program Files\Java\jdk-21&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
 </span></code></pre></div>
-<p>You can also set it through <strong>Settings → System → About →
-Advanced system settings → Environment Variables</strong>.</p>
-<p>Open a new PowerShell or Command Prompt window so the change takes
-effect.</p>
+<p>Alternatively, configure the variable through the graphical interface.
+Navigate to <code>Settings</code> → <code>System</code> → <code>About</code> → <code>Advanced system settings</code> → <code>Environment Variables</code>, or search for <code>Environment Variables</code> using the Windows search bar.</p>
+<p>Open a new PowerShell or Command Prompt window so the change takes effect.</p>
 </div>
 </div>
 </div>
 <h2 id="install-maven">Install Maven<a class="headerlink" href="#install-maven" title="Permanent link">&para;</a></h2>
 <p>There are two common ways to install Maven:</p>
 <ul>
-<li><strong>With a package manager.</strong> This is the quickest path on most
-  systems and lets the package manager handle upgrades.</li>
-<li><strong>From the official binary archive.</strong> This gives you full control
-  over the exact version and where Maven lives on disk.</li>
+<li><strong>Through a package manager.</strong> This is the quickest path on most systems, and the package manager handles upgrades.</li>
+<li><strong>From the official binary archive.</strong> This gives full control over the installed version and its location on disk.</li>
 </ul>
-<p>Pick whichever fits your environment. Both produce a working <code>mvn</code>
-command.</p>
+<p>Both approaches result in a working <code>mvn</code> command.
+Most package managers configure the <code>PATH</code> automatically; the binary-archive method requires this to be done manually, as described in <a href="#3-add-maven-to-the-path">Add Maven to the <code>PATH</code></a>.</p>
 <h3 id="install-with-a-package-manager">Install with a package manager<a class="headerlink" href="#install-with-a-package-manager" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">macOS</label><label for="__tabbed_2_2">Linux</label><label for="__tabbed_2_3">Windows</label></div>
+<p>The package managers listed below are some of the most commonly used.
+They are not the only options — other Java toolchain managers can install Maven as well.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Cross-platform</label><label for="__tabbed_2_2">macOS</label><label for="__tabbed_2_3">Linux</label><label for="__tabbed_2_4">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>With <a href="https://brew.sh/">Homebrew</a>:</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>brew<span class="w"> </span>install<span class="w"> </span>maven
+<p><a href="https://sdkman.io/">SDKMAN!</a> is available on macOS, Linux, and Windows Subsystem for Linux, and can install Maven alongside several JDK distributions:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sdk<span class="w"> </span>install<span class="w"> </span>maven
 </span></code></pre></div>
-<p>With <a href="https://sdkman.io/">SDKMAN!</a> (handy if you also manage
-multiple JDKs):</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sdk<span class="w"> </span>install<span class="w"> </span>maven
+<p>SDKMAN! adds <code>mvn</code> to the <code>PATH</code> automatically.</p>
+</div>
+<div class="tabbed-block">
+<p>With <a href="https://brew.sh/">Homebrew</a>:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>brew<span class="w"> </span>install<span class="w"> </span>maven
 </span></code></pre></div>
 <p>With <a href="https://www.macports.org/">MacPorts</a>:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>port<span class="w"> </span>install<span class="w"> </span>maven3
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>The exact command depends on your distribution's package manager:</p>
+<p>The exact command depends on the distribution's package manager:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Debian / Ubuntu</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>maven
@@ -1360,13 +1346,7 @@ multiple JDKs):</p>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># Older RHEL / CentOS (yum)</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>maven
 </span></code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Distro packages can lag behind</p>
-<p>Linux distributions sometimes ship an older Maven release. If
-you need a specific version, prefer the
-<a href="#install-from-the-binary-archive">binary archive</a> or
-<a href="https://sdkman.io/">SDKMAN!</a>.</p>
-</div>
+<p>Distributions other than those listed (for example, Arch Linux) ship Maven through their own package managers as well.</p>
 </div>
 <div class="tabbed-block">
 <p>With <a href="https://chocolatey.org/">Chocolatey</a>:</p>
@@ -1378,136 +1358,133 @@ you need a specific version, prefer the
 </div>
 </div>
 </div>
-<p>After the package manager finishes, skip ahead to
-<a href="#verify-the-installation">Verify the installation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Package manager versions may lag behind</p>
+<p>Every package manager ships Maven some time after a release is published by the Apache Maven team, because each tool depends on that release as its source.
+For tools such as Homebrew, Chocolatey, Scoop, and SDKMAN!, the delay is usually a few days.
+Linux distribution repositories often lag behind by weeks or months.
+To install a specific (especially the latest) Maven version, prefer <a href="#install-from-the-binary-archive">the binary archive</a> or <a href="https://sdkman.io/">SDKMAN!</a>.</p>
+</div>
+<p>After the package manager finishes, continue with <a href="#verify-the-installation">Verify the installation</a>.</p>
 <h3 id="install-from-the-binary-archive">Install from the binary archive<a class="headerlink" href="#install-from-the-binary-archive" title="Permanent link">&para;</a></h3>
-<p>This method works on any operating system and gives you the exact
-version published by the Apache Maven project.</p>
+<p>This method works on any system and installs the exact version published by the Apache Maven team.</p>
+<p>The steps below use Maven <code>3.9.16</code> as an example.
+Replace the version number with the version that was downloaded.</p>
 <h4 id="1-download-the-archive">1. Download the archive<a class="headerlink" href="#1-download-the-archive" title="Permanent link">&para;</a></h4>
-<p>Go to the <a href="https://maven.apache.org/download.html">Maven download page</a>
-and download the latest <strong>binary</strong> distribution:</p>
+<p>Open the <a href="https://maven.apache.org/download.html">Maven download page</a> and download the latest <strong>binary</strong> distribution.
+Two formats are offered:</p>
 <ul>
-<li><code>apache-maven-&lt;version&gt;-bin.zip</code> — works on every platform, easiest
-  on Windows,</li>
+<li><code>apache-maven-&lt;version&gt;-bin.zip</code> — works on every platform and is the most convenient on Windows;</li>
 <li><code>apache-maven-&lt;version&gt;-bin.tar.gz</code> — convenient on macOS and Linux.</li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Verify the download (optional but recommended)</p>
-<p>For production setups, verify the download against the published
-<a href="https://www.apache.org/info/verification.html">PGP signatures and checksums</a>
-using the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a>
-file.</p>
+<p class="admonition-title">Verify the integrity of the download (optional but recommended)</p>
+<p>For production setups, check the downloaded archive against the published <a href="https://www.apache.org/info/verification.html">PGP signatures and checksums</a> using the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> file.
+This ensures the archive has not been tampered with during transfer.</p>
 </div>
 <h4 id="2-extract-the-archive">2. Extract the archive<a class="headerlink" href="#2-extract-the-archive" title="Permanent link">&para;</a></h4>
-<p>Extract it to a directory you control. A few common conventions:</p>
+<p>Extract the archive into a directory of choice, for example:</p>
 <ul>
-<li>macOS / Linux: <code>/opt/apache-maven-&lt;version&gt;</code> or
-  <code>~/tools/apache-maven-&lt;version&gt;</code></li>
-<li>Windows: <code>C:\Program Files\Apache\apache-maven-&lt;version&gt;</code> or
-  <code>C:\Tools\apache-maven-&lt;version&gt;</code></li>
+<li>macOS / Linux: <code>/opt/apache-maven-3.9.16</code> or <code>~/tools/apache-maven-3.9.16</code></li>
+<li>Windows: <code>C:\apache-maven-3.9.16</code> or <code>C:\Program Files\Apache\apache-maven-3.9.16</code></li>
 </ul>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">macOS / Linux</label><label for="__tabbed_3_2">Windows (PowerShell)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
+<p>The example below assumes the archive <code>apache-maven-3.9.16-bin.tar.gz</code> was downloaded, and extracts it into <code>/opt</code>, which creates <code>/opt/apache-maven-3.9.16</code>:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>apache-maven-3.9.16-bin.tar.gz<span class="w"> </span>-C<span class="w"> </span>/opt
 </span></code></pre></div>
-<p>This creates <code>/opt/apache-maven-3.9.16</code>.</p>
 </div>
 <div class="tabbed-block">
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Expand-Archive</span> <span class="n">-Path</span> <span class="n">apache-maven</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">9</span><span class="p">.</span><span class="n">16-bin</span><span class="p">.</span><span class="n">zip</span> <span class="n">-DestinationPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Tools</span>
+<p>The example below assumes the archive <code>apache-maven-3.9.16-bin.zip</code> was downloaded, and extracts it into <code>C:\</code>, which creates <code>C:\apache-maven-3.9.16</code>:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">Expand-Archive</span> <span class="n">-Path</span> <span class="n">apache-maven</span><span class="p">-</span><span class="n">3</span><span class="p">.</span><span class="n">9</span><span class="p">.</span><span class="n">16-bin</span><span class="p">.</span><span class="n">zip</span> <span class="n">-DestinationPath</span> <span class="n">C</span><span class="p">:\</span>
 </span></code></pre></div>
-<p>This creates <code>C:\Tools\apache-maven-3.9.16</code>.</p>
 </div>
 </div>
 </div>
-<h4 id="3-add-maven-to-your-path">3. Add Maven to your <code>PATH</code><a class="headerlink" href="#3-add-maven-to-your-path" title="Permanent link">&para;</a></h4>
-<p>Maven needs its <code>bin</code> directory on your <code>PATH</code> so the <code>mvn</code> command is
-available everywhere.</p>
+<h4 id="3-add-maven-to-the-path">3. Add Maven to the <code>PATH</code><a class="headerlink" href="#3-add-maven-to-the-path" title="Permanent link">&para;</a></h4>
+<p>To make the <code>mvn</code> command available from any terminal, add the <code>bin</code> directory of the Maven installation to the <code>PATH</code> environment variable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some installation methods (SDKMAN!, Homebrew, Chocolatey, Scoop, and most Linux package managers) configure <code>PATH</code> automatically.
+This step is therefore only required when Maven was installed from the binary archive.</p>
+</div>
+<p>The examples below assume Maven <code>3.9.16</code> was extracted to the directory shown in the previous step.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">macOS / Linux (bash, zsh)</label><label for="__tabbed_4_2">Windows (PowerShell)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Add these lines to your shell profile (<code>~/.zshrc</code>, <code>~/.bashrc</code>,
-<code>~/.profile</code>):</p>
-<div class="language-sh highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MAVEN_HOME</span><span class="o">=</span>/opt/apache-maven-3.9.16
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$MAVEN_HOME</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<p>Add the following line to the shell profile (<code>~/.zshrc</code>, <code>~/.bashrc</code>, or <code>~/.profile</code>):</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/apache-maven-3.9.16/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 </span></code></pre></div>
-<p>Reload your shell, for example:</p>
+<p>Reload the shell, for example:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>Set the environment variables for your user. The snippet below is
-safe to re-run. It only appends to <code>Path</code> if Maven is not already
-there:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$mavenHome</span> <span class="p">=</span> <span class="s2">&quot;C:\Tools\apache-maven-3.9.16&quot;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;MAVEN_HOME&quot;</span><span class="p">,</span> <span class="nv">$mavenHome</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="nv">$userPath</span> <span class="p">=</span> <span class="no">[Environment]</span><span class="p">::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;Path&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$userPath</span> <span class="o">-notlike</span> <span class="s2">&quot;*$mavenHome\bin*&quot;</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>  <span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;Path&quot;</span><span class="p">,</span> <span class="s2">&quot;$userPath;$mavenHome\bin&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
+<p>The snippet below appends Maven's <code>bin</code> directory to the user-level <code>Path</code>.
+It is safe to re-run: the directory is only added when it is not already present.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$mavenBin</span> <span class="p">=</span> <span class="s2">&quot;C:\apache-maven-3.9.16\bin&quot;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">$userPath</span> <span class="p">=</span> <span class="no">[Environment]</span><span class="p">::</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;Path&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$userPath</span> <span class="o">-notlike</span> <span class="s2">&quot;*$mavenBin*&quot;</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>  <span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;Path&quot;</span><span class="p">,</span> <span class="s2">&quot;$userPath;$mavenBin&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Or use the GUI: <strong>Settings → System → About → Advanced system
-settings → Environment Variables</strong>, then add <code>MAVEN_HOME</code> and
-append <code>%MAVEN_HOME%\bin</code> to <code>Path</code>.</p>
-<p>Open a new terminal so the changes take effect.</p>
+<p>Alternatively, use the graphical interface.
+Navigate to <code>Settings</code> → <code>System</code> → <code>About</code> → <code>Advanced system settings</code> → <code>Environment Variables</code> (or search for <code>Environment Variables</code> using the Windows search bar), then append <code>C:\apache-maven-3.9.16\bin</code> to the <code>Path</code> variable.</p>
+<p>Open a new terminal so the change takes effect.</p>
 </div>
 </div>
 </div>
 <h2 id="verify-the-installation">Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permanent link">&para;</a></h2>
-<p>Open a <strong>new</strong> terminal (so it picks up your new environment variables)
-and run:</p>
+<p>Open a <strong>new</strong> terminal so the latest environment variables are picked up, and run:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mvn<span class="w"> </span>-v
 </span></code></pre></div>
-<p>You should see output similar to this:</p>
+<p>The alternative <code>mvn --version</code> produces the same output.</p>
+<p>The output reports the installed Maven version, the Maven installation directory, the JDK Maven is using, and basic operating-system information.
+Example:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Maven home: /opt/apache-maven-3.9.16
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Java version: 21.0.4, vendor: Eclipse Adoptium, runtime: /opt/jdk-21
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>Default locale: en_US, platform encoding: UTF-8
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>OS name: &quot;linux&quot;, version: &quot;6.8.0&quot;, arch: &quot;amd64&quot;, family: &quot;unix&quot;
 </span></code></pre></div>
-<p>If you see this, <strong>Maven is installed and ready to use</strong>.</p>
+<p>If such output is shown, <strong>Maven is correctly set up and ready to use</strong>.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <details class="failure">
 <summary><code>mvn: command not found</code> (or <code>'mvn' is not recognized...</code>)</summary>
-<p>The <code>mvn</code> command is not on your <code>PATH</code>. Confirm that:</p>
+<p>The <code>mvn</code> command is not on the <code>PATH</code>.
+Confirm that:</p>
 <ul>
-<li>the <code>bin/</code> directory inside your Maven installation is on <code>PATH</code>,</li>
-<li>you opened a <strong>new</strong> terminal after editing your environment
-  variables.</li>
+<li>the <code>bin</code> directory inside the Maven installation is on <code>PATH</code>;</li>
+<li>the current terminal was opened <strong>after</strong> the environment variables were updated.</li>
 </ul>
-<p>Run <code>echo $PATH</code> (macOS/Linux), <code>echo $env:PATH</code> (Windows
-PowerShell), or <code>echo %PATH%</code> (Windows Command Prompt) to inspect
-your current path.</p>
+<p>Inspect the current <code>PATH</code> with <code>echo $PATH</code> (macOS/Linux), <code>echo $env:PATH</code> (Windows PowerShell), or <code>echo %PATH%</code> (Windows Command Prompt).</p>
 </details>
 <details class="failure">
 <summary><code>JAVA_HOME is not defined correctly</code></summary>
-<p>Maven cannot find your JDK. Check that:</p>
+<p>Maven cannot find the JDK.
+Check that:</p>
 <ul>
-<li><code>JAVA_HOME</code> points to a JDK directory (not a JRE, and not the
-  <code>bin/</code> subdirectory),</li>
-<li>the directory exists and contains <code>bin/java</code> (or <code>bin\java.exe</code>
-  on Windows).</li>
+<li><code>JAVA_HOME</code> points to a directory where a JDK is installed (not a JRE, and not the <code>bin/</code> subdirectory of a JDK);</li>
+<li>that directory exists and contains <code>bin/java</code> (or <code>bin\java.exe</code> on Windows).</li>
 </ul>
-<p>Run <code>echo $JAVA_HOME</code> (macOS/Linux), <code>echo $env:JAVA_HOME</code>
-(Windows PowerShell), or <code>echo %JAVA_HOME%</code> (Windows Command
-Prompt) to inspect the current value.</p>
+<p>Inspect the current value with <code>echo $JAVA_HOME</code> (macOS/Linux), <code>echo $env:JAVA_HOME</code> (Windows PowerShell), or <code>echo %JAVA_HOME%</code> (Windows Command Prompt).</p>
 </details>
 <details class="failure">
 <summary>Wrong Java version is used</summary>
-<p><code>mvn -v</code> prints the JDK Maven is actually using. If it is not the
-one you expect, your <code>JAVA_HOME</code> or <code>PATH</code> is pointing at a
-different JDK. Update <code>JAVA_HOME</code> and open a new shell.</p>
+<p>The output of <code>mvn -v</code> reports the JDK Maven is using.
+If it does not match the expected JDK, either <code>JAVA_HOME</code> or <code>PATH</code> points to a different JDK installation.
+Update whichever is incorrect and open a new shell.</p>
+<p>Each Maven version also requires a minimum JDK version, as listed in <a href="#prerequisites-a-working-jdk">Prerequisites: a working JDK</a>.
+For example, running Maven 4 with a JDK older than 17 will fail.</p>
 </details>
 <details class="question">
 <summary>Behind a corporate proxy?</summary>
-<p>If Maven cannot download dependencies on first use, you may need
-to configure a proxy in <code>~/.m2/settings.xml</code>. See the
-<a href="https://maven.apache.org/guides/mini/guide-configuring-maven.html">Guide to Configuring Maven</a>.</p>
+<p>Maven may be unable to download dependencies on first use when running behind a corporate proxy.
+Configure a proxy in <code>~/.m2/settings.xml</code> as described in the <a href="https://maven.apache.org/guides/mini/guide-configuring-maven.html">Guide to Configuring Maven</a>.</p>
 </details>
 <h2 id="whats-next">What's next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
-<p>Maven is installed and verified. You are now ready to build your first
-project.</p>
+<p>Once Maven is installed and verified, the next step is to build a sample project.</p>
 <p><a href="../basic-project-sample/">Continue: Basic project sample →</a></p>
 
 
