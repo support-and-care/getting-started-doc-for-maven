@@ -640,10 +640,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ready-to-try-it" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Ready to try it?
+        Next steps
       </span>
     </span>
   </a>
@@ -1056,10 +1056,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ready-to-try-it" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Ready to try it?
+        Next steps
       </span>
     </span>
   </a>
@@ -1150,115 +1150,66 @@
 
 
 <h1 id="what-is-maven-for">What is Maven (for)?<a class="headerlink" href="#what-is-maven-for" title="Permanent link">&para;</a></h1>
-<p>Apache Maven is a free, open-source <strong>build tool for Java and other
-JVM-based projects</strong>. You describe your project in a single file
-(<code>pom.xml</code>), and Maven takes care of compiling your code, running your
-tests, packaging the result, and pulling in any libraries you depend on.</p>
-<p>In short: instead of writing and maintaining a custom build script for
-every project, you tell Maven <em>what</em> your project is, and it figures out
-<em>how</em> to build it.</p>
+<p>Apache Maven is a free, open-source build tool, primarily used to build Java applications.
+It is one of the most widely used build tools in the Java ecosystem and is designed to be easy to use, even in complex enterprise scenarios.</p>
+<p>In short: instead of writing and maintaining a custom build script for every project, the project's structure and dependencies are described in a single file (<code>pom.xml</code>), and Maven figures out how to build it.</p>
 <h2 id="what-maven-does-for-you">What Maven does for you<a class="headerlink" href="#what-maven-does-for-you" title="Permanent link">&para;</a></h2>
-<p>Most Java projects need to do roughly the same things over and over:
-compile sources, run tests, bundle the output into a JAR or WAR, and
-fetch third‑party libraries. Maven solves these tasks once, in a
-consistent way, so you don't have to solve them again for every project.</p>
+<p>A lot of tasks have to be done to build a software project, for example compiling sources, running tests, packaging the result, and managing third-party libraries.
+Maven automates these tasks and performs them in a consistent, predefined way, so that they do not have to be solved again for every project.</p>
 <h3 id="1-it-builds-your-project">1. It builds your project<a class="headerlink" href="#1-it-builds-your-project" title="Permanent link">&para;</a></h3>
-<p>With a single command, Maven will compile your code, run your unit
-tests, and package the result as a JAR, WAR, or another distributable
-format:</p>
+<p>Maven compiles the code, runs the tests, and packages the result as an archive.
+To perform all of these steps, only one command is needed:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mvn<span class="w"> </span>package
 </span></code></pre></div>
-<p>You don't need to write a build script Maven already knows the steps.
-These steps are called the <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">build
-lifecycle</a>
-and run in a fixed, predictable order (validate, compile, test, package,
-verify, install, deploy).</p>
+<p>These steps run in a fixed, predictable order called the <a href="https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">build lifecycle</a>.
+No custom build script is required, because Maven already knows the steps.</p>
 <h3 id="2-it-manages-your-dependencies">2. It manages your dependencies<a class="headerlink" href="#2-it-manages-your-dependencies" title="Permanent link">&para;</a></h3>
-<p>Almost every real project uses third-party libraries. Instead of
-downloading JAR files by hand and checking them into your repository,
-you declare what you need in <code>pom.xml</code>:</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;dependency&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&lt;artifactId&gt;</span>junit-jupiter-api<span class="nt">&lt;/artifactId&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&lt;version&gt;</span>5.11.0<span class="nt">&lt;/version&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">&lt;/dependency&gt;</span>
-</span></code></pre></div>
-<p>Maven will then:</p>
+<p>Almost every real project uses third-party libraries.
+Instead of downloading the required files by hand and checking them into the repository, Maven handles this.
+Once the required libraries are declared in <code>pom.xml</code>, Maven will:</p>
 <ul>
-<li>download that library from a central repository (such as <a href="https://search.maven.org/">Maven
-  Central</a>),</li>
-<li>download anything <strong>that</strong> library needs (its <em>transitive</em>
-  dependencies),</li>
-<li>cache it locally so it isn't re-downloaded for every build,</li>
-<li>make it available to your compiler, tests, and packaging step.</li>
+<li>download each library from a central repository (such as <a href="https://search.maven.org/">Maven Central</a>),</li>
+<li>download any other library <strong>that</strong> library needs (its <em>transitive</em> dependencies),</li>
+<li>cache it locally so it is not re-downloaded every time it is needed,</li>
+<li>make it available to the compiler, tests, and packaging step.</li>
 </ul>
 <h3 id="3-it-gives-every-project-the-same-shape">3. It gives every project the same shape<a class="headerlink" href="#3-it-gives-every-project-the-same-shape" title="Permanent link">&para;</a></h3>
-<p>Maven projects follow a <a href="https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">standard directory
-layout</a>:
-source code lives in <code>src/main/java</code>, tests in <code>src/test/java</code>, build
-output in <code>target/</code>, and so on.</p>
-<p>Once you've learned this layout, you can drop into any other Maven
-project your own, your team's, or an open source one on GitHub and
-immediately know where to look.</p>
+<p>Maven follows a <a href="https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">standard directory and project layout</a>.
+Following the principle of convention over configuration, this makes it easy to switch between Maven projects, because the structure is always familiar.</p>
 <h3 id="4-it-is-extended-through-plugins">4. It is extended through plugins<a class="headerlink" href="#4-it-is-extended-through-plugins" title="Permanent link">&para;</a></h3>
-<p>The actual work (compiling Java, running tests, building a JAR, signing
-artifacts, generating a site, …) is performed by <strong>plugins</strong>. Maven
-ships with a rich set of core plugins, and the wider ecosystem provides
-plugins for almost anything else you might need: code quality checks,
-test coverage, container image builds, deployment, and so on.</p>
-<p>You configure plugins in the same <code>pom.xml</code>, alongside your
-dependencies.</p>
+<p>The actual work is performed by <strong>plugins</strong>.
+Maven ships with a rich set of plugins, covering the most needed functionality such as compiling, running tests, and packaging archives.
+In addition to that, the Maven community provides plugins for almost anything else that might be needed, including code quality checks, test coverage, container image builds, and deployment.</p>
 <h2 id="problems-maven-solves">Problems Maven solves<a class="headerlink" href="#problems-maven-solves" title="Permanent link">&para;</a></h2>
-<p>If you have ever worked on a Java project without a proper build tool,
-some of these may sound familiar. Maven is designed to solve them:</p>
+<p>When working on a Java project without a proper build tool, some of these questions may sound familiar.
+Maven is designed to solve them:</p>
 <ul>
 <li><strong>"How do I build this project?"</strong>
-  Anyone who can install Maven can build the project with <code>mvn package</code>.
-  No hidden scripts, no "ask Noah, he knows".</li>
-<li><strong>"Which version of which library do we use?"</strong>
-  Versions are pinned in <code>pom.xml</code> and resolved the same way on every
-  machine and CI server.</li>
-<li><strong>"Do I have all the JARs I need?"</strong>
-  Maven downloads them for you, including the libraries your libraries
-  depend on.</li>
-<li><strong>"Where do tests go? How do I run them?"</strong>
-  Tests live in <code>src/test/java</code> and run as part of the build.</li>
+  The build is portable and produces the same result on every machine, so the project can be built with a single <code>mvn package</code> command, the same way on every developer machine and on the CI server.</li>
+<li><strong>"Do I have all the libraries I need, and in which versions?"</strong>
+  Maven downloads them, including the libraries those libraries depend on, with versions pinned in <code>pom.xml</code> and resolved the same way on every machine and CI server.</li>
+<li><strong>"Where does source code belong? Where are tests stored? Where is everything in this project?"</strong>
+  Maven uses a standard directory layout, so the project structure is always familiar, even when joining a new team.</li>
 <li><strong>"How do I share my library with other projects?"</strong>
-  Maven can publish your build output to a repository so other projects
-  can depend on it, just like they depend on any other library.</li>
-<li><strong>"I just joined a new team, Where is everything?"</strong>
-  If the project uses Maven, the layout is already familiar.</li>
+  Maven can publish the build output to a repository such as <a href="https://search.maven.org/">Maven Central</a>, which makes it easy to share libraries with the wider Java community.</li>
 </ul>
 <h2 id="when-maven-is-a-good-fit">When Maven is a good fit<a class="headerlink" href="#when-maven-is-a-good-fit" title="Permanent link">&para;</a></h2>
-<p>Maven works well when you want:</p>
+<p>Maven is a good choice when the following are needed:</p>
 <ul>
-<li>a build that behaves the same on your laptop, your colleague's laptop,
-  and CI,</li>
+<li>a portable build that behaves the same on every machine, including CI servers,</li>
 <li>automatic dependency resolution from public or private repositories,</li>
-<li>a conventional project layout that other tools (IDEs, CI systems,
-  code-quality tools) already understand,</li>
+<li>a conventional project layout that other tools (IDEs, CI systems, code-quality tools) already understand,</li>
 <li>a large ecosystem of ready-made plugins,</li>
-<li>support for projects of any size, from a single library to a large
-  multi-module application.</li>
+<li>support for projects of any size, from a single library to a large enterprise application.</li>
 </ul>
 <h2 id="what-maven-is-not">What Maven is <em>not</em><a class="headerlink" href="#what-maven-is-not" title="Permanent link">&para;</a></h2>
 <p>To avoid surprises later, it helps to know what Maven is <strong>not</strong>:</p>
 <ul>
-<li>It is <strong>not an IDE</strong>. You can use Maven from any editor or IDE,
-  most major IDEs (IntelliJ IDEA, Eclipse, VS Code, NetBeans) understand
-  <code>pom.xml</code> natively.</li>
-<li>It is <strong>not a CI/CD server</strong>. Maven runs your build, tools like
-  Jenkins, GitHub Actions, or GitLab CI decide <em>when</em> and <em>where</em> to run
-  it.</li>
-<li>It is <strong>not limited to Java</strong>. Maven is most commonly used for Java,
-  but plugins exist for Kotlin, Scala, Groovy, and other JVM languages,
-  and for non-JVM tasks such as building container images or front-end
-  assets.</li>
+<li>It is <strong>not an IDE</strong>. All modern IDEs integrate Maven out of the box.</li>
+<li>It is <strong>not a CI server</strong>. Maven runs the build; the CI server runs Maven. Maven is also not a deployment tool: in the past, it was sometimes misused to distribute build artifacts to production, which is not its purpose.</li>
 </ul>
-<h2 id="ready-to-try-it">Ready to try it?<a class="headerlink" href="#ready-to-try-it" title="Permanent link">&para;</a></h2>
-<p>Now that you have a feel for what Maven is and what it's good for, the
-next step is to install it and run your first build.</p>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>With a clear picture of Maven's role and purpose, the next step is to install it and run a first build.</p>
 <p><a href="../install-maven/">Continue: Download and install Maven →</a></p>
 
 
